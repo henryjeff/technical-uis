@@ -9,7 +9,7 @@
   --padding-size: 2rem;
   --amber: #ffa15c;
   --red: #ff2f2f;
-  filter: drop-shadow(0 0 10px var(--color));
+  /* filter: drop-shadow(0 0 10px var(--color)); */
 
   color: var(--color);
 
