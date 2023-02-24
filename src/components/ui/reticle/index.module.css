@@ -1,0 +1,24 @@
+.reticle {
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reticle > * {
+  position: absolute;
+}
+
+.basis {
+  position: relative;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  left: -30%;
+  right: -30%;
+}

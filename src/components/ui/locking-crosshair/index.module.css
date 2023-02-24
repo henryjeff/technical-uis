@@ -1,0 +1,98 @@
+.positionalWrapper {
+  position: absolute;
+  pointer-events: none;
+}
+
+.crosshairWrapper {
+  --color: #fff;
+  --border: 1px solid var(--color);
+  --padding-size: 2rem;
+  --amber: #ffa15c;
+  --red: #ff2f2f;
+  filter: drop-shadow(0 0 10px var(--color));
+
+  color: var(--color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crosshair {
+  display: grid;
+  gap: 4px;
+  font-family: var(--mono-font);
+  font-size: 16px;
+
+  grid-template-columns: var(--padding-size) 1fr var(--padding-size);
+  grid-template-rows: var(--padding-size) 1fr var(--padding-size);
+  grid-template-areas:
+    ". top ."
+    "left box right"
+    ". bottom .";
+}
+
+.cross {
+  position: absolute;
+}
+
+.box {
+  grid-area: box;
+  width: 5rem;
+  height: 5rem;
+  border: var(--border);
+  border-width: 2px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom {
+  grid-area: bottom;
+  margin: 0;
+}
+
+.top {
+  grid-area: top;
+  margin: 0;
+}
+
+.left {
+  grid-area: left;
+  /* verfcial text */
+  writing-mode: vertical-rl;
+  margin: 0;
+}
+
+.right {
+  grid-area: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  margin: 0;
+}
+
+.lockCircle {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: var(--border);
+  border-style: dashed;
+}
+
+.chevrons {
+  position: absolute;
+  inset: 0;
+  left: -2rem;
+  right: -2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chevrons > :last-child {
+  transform: rotate(180deg);
+}
